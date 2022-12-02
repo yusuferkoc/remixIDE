@@ -13,4 +13,3 @@ contract FeeCollector { // 0x8FA741A325c7eDa38e6A3DA45894801e1F357e90
         balance += msg.value;
     }
 }
-
