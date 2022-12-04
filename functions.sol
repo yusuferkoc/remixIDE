@@ -51,7 +51,7 @@ contract Functions3 {
     function publicKeyword() public pure returns(string memory) {
         return "bu bir public fonksiyondur";
     }
-    function callPublicKeyword() public pure  returns () {
+    function callPublicKeyword() public pure  returns (string memory) {
         return publicKeyword();
     }
 
@@ -70,7 +70,16 @@ contract Functions3 {
     function internalKeyword() private pure returns (string memory) {
         return "bu bir Internal fonksiyondur";
     } 
-    function callInternalKeyword() public pure  returns () {
-        return InternalKeyword();
+    function callInternalKeyword() public pure  returns (string memory) {
+        return internalKeyword();
+    }
+
+    // External:dışarıdan kullanıcılar çağırabilir ama kontrat içinden çağrılmaz
+
+    function externalKeyword() private pure returns (string memory) {
+        return "bu bir External fonksiyondur";
+    } 
+    function callExternalKeyword() public pure  returns (string memory) {
+        return externalKeyword();
     }
 }
