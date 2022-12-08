@@ -6,13 +6,15 @@ contract Constructor {
     string public tokenName;
     uint public totalSupply;
 
+    /*
     uint public constant supply = 1000; // constant değeri başlangıçta verilir daha sonra değiştirilemez
     uint public immutable number; // immutable değeri başlangıçta değil constructorda verilebilir daha sonra değiştirilemez fakat owner
     
     constructor (uint num){
-        number = num
+        number = num;
     }
-
+    */
+    
     constructor(string memory name,uint number){
 
         tokenName = name;
@@ -23,3 +25,4 @@ contract Constructor {
         totalSupply = number;
     }
 }
+
