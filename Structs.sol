@@ -53,7 +53,7 @@ contract StructEnum {
         return orders.length - 1;
     }
 
-    function advanceOrder (uint256 _orderId) external{
+    function advanceOrder(uint256 _orderId) external{
         require(owner == msg.sender,"ypu are not authorized.");
         require(_orderId < orders.length,"not a valid order id.");
 
@@ -68,13 +68,15 @@ contract StructEnum {
             order.status = Status.Shipped;
         }
     }
-
-    function getOrder(uint256 _orderId) external view returns(Order memory) {
+    
+    function getOrder(uint256 _orderId) public view returns(Order memory) {
         require(_orderId < orders.length,"not a valid order id");
             return orders[_orderId];
         }
+    
 
-    function updateZip(uint256 _orderId, string memory _zip) external {
+
+    function updateZip(uint256 _orderId, string memory _zip) public {
 
         require(_orderId < orders.length,"not a valid order id");
         Order storage order = orders[_orderId];
